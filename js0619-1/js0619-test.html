@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--bmi計算  -->
+    <script>
+        var t = 1.58;
+        var g = 70;
+        var bmi = 0;
+
+        bmi = g / (t * t);
+        console.log(bmi.toFixed(2));
+
+        if (bmi < 18.5) {
+            console.log("過輕");
+        } else if (18.5 <= bmi && bmi < 24) {
+            console.log("正常");
+        } else if (bmi >= 24) {
+            console.log("過重");
+        }
+
+
+    </script>
+
+</body>
+
+</html>
