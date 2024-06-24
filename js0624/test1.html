@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let strScores = 0;
+        strScores = window.prompt("請輸入您的分數", "aa");
+
+        //檢查是否有按取消
+        if (strScores === null) {
+            window.alert("您按取消了");
+        } else {
+            // 如果按確認，則檢查輸入的內容
+
+            //檢查是不是數值
+            // 轉換字串為數字，如果無法轉換，則為NaN
+            strScores = Number(strScores);
+            if (isNaN(strScores)) {
+                window.alert("您未輸入數字");
+            } else {
+                // 如果是數值，則檢查輸入的內容
+                
+                    if (0 <= strScores && strScores< 60) {
+                        window.alert("不及格");
+                    } else if (60 <= strScores && strScores <= 100) {
+                        window.alert("恭喜及格");
+                    }else{
+                        window.alert("分數超過範圍");
+                    }
+
+                }
+            }
+
+        
+
+        // if (0 <= strScores < 60) {
+        //     window.alert(strScores + "分>>不及格");
+        // } else if (strScores >= 60) {
+        //     window.alert(strScores + "分>>恭喜及格");
+        // } else if (typeof (strScores) !== Number) {
+        //     window.alert("您未輸入數字");
+        // }
+        // else if (strScores === null) {
+        //     window.alert("您未輸入數字");
+        // }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

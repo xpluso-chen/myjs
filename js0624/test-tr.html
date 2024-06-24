@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let strScores;
+strScores = window.prompt("請輸入您的分數", "aa");
+
+if(strScores==null){
+window.alert("您按了取消");    
+}else if(strScores==" "){
+    window.alert("分數不能空白");    
+}else if(strScores>100 || strScores<0){
+    window.alert("分數不是在有效範圍");    
+}else if(strScores>=60){
+    window.alert("及格");    
+}else if(strScores<60){
+    window.alert("不及格");    
+}else{
+    window.alert("非數字");    
+}
+
+
+    </script>
+
+
+
+</body>
+</html>
