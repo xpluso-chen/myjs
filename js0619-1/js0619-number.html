@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 字串變數 -->
+
+    <script>
+        let strName = "拉拉";
+        var a = 6;
+        var b = "34";
+        var c = 9.1234567;
+
+        console.log(`人名:${strName}`);
+
+        console.log(typeof (a));
+        console.log(typeof (b));
+        // 將數值輸出成字串
+        console.log(`${Number(b)}`);
+
+        // 將輸出結果覆蓋成數值
+        b = Number(b);
+        console.log(typeof (b));
+
+        console.log(strName);
+        console.log(`${c}`);
+
+        // 取小數點後2位，並輸出成字串
+        console.log(c.toFixed(2));
+
+        // 四捨五入
+        // 如果要運算就要先轉成數值
+        console.log(Number(c.toFixed(5)) + 6);
+        // 取整數
+        console.log(Math.round(c));
+
+        console.log(Math.random());
+    </script>
+
+</body>
+
+</html>
