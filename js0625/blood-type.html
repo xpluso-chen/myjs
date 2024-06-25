@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 大小寫防呆判斷
+        // if/switch練習
+        let blood = window.prompt("請輸入血型");
+
+
+        if (blood == null) {
+            document.write("您按了取消");
+        } else if (blood == "") {
+            document.write("您未輸入");
+        } else if (blood == "a" || blood == "A") {
+            document.write("A型");
+        } else if (blood == "b" || blood == "B") {
+            document.write("B型");
+        } else if (blood == "o" || blood == "O") {
+            document.write("O型");
+        } else if (blood == "ab" || blood == "AB" ||blood == "Ab" ||blood == "aB") {
+            document.write("AB型");
+        } else {
+            document.write("未填正確血型");
+        }
+
+
+        switch (blood) {
+            case null:
+                window.alert("您按了取消");
+                break;
+
+            case '':
+                window.alert("您未輸入");
+                break;
+
+            case "a":
+                window.alert("A型");
+                break;
+
+            case "A":
+                window.alert("A型");
+                break;
+
+            case "b":
+                window.alert("B型");
+                break;
+
+            case "B":
+                window.alert("B型");
+                break;
+
+            case "o":
+                window.alert("O型");
+                break;
+
+            case "O":
+                window.alert("O型");
+                break;
+
+            case "AB":
+                window.alert("AB型");
+                break;
+
+            case "ab":
+                window.alert("AB型");
+                break;
+
+                case "Ab":
+                window.alert("AB型");
+                break;
+
+                case "aB":
+                window.alert("AB型");
+                break;
+            default:
+                window.alert("未填正確血型");
+        }
+
+    </script>
+
+</body>
+
+</html>

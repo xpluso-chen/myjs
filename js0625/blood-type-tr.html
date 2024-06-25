@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let blood = window.prompt("請輸入血型");
+        // let blood = window.prompt("請輸入血型").trim();這樣寫更快
+
+        // blood = blood.toUpperCase();
+        // 大小寫防呆判斷
+        // 自動轉成大寫英文
+
+
+        //如果要保留取消後會顯示的內容必須這樣寫
+        if (blood == null) {
+            // 按取消
+            document.write("您按了取消");
+        } else {
+            // 按確定
+            blood = blood.trim().toUpperCase();
+            // .trim()去除內容前後的空白
+            if (blood == "") {
+                document.write("您未輸入");
+            } else if (blood == "A") {
+                document.write("A型");
+            } else if (blood == "B") {
+                document.write("B型");
+            } else if (blood == "O") {
+                document.write("O型");
+            } else if (blood == "aB") {
+                document.write("AB型");
+            } else {
+                document.write("未填正確血型");
+                document.write("<br>");//換行
+                document.write("請重新輸入");
+            }
+        }
+
+
+
+        if (blood == null) {
+            // 按取消
+            window.alert("您按了取消");
+        } else {
+            // 按確定
+            // .trim()去除內容前後的空白
+            switch (blood.trim().toUpperCase()) {
+
+                case '':
+                    window.alert("您未輸入");
+                    break;
+
+                case "A":
+                    window.alert("A型");
+                    break;
+
+                case "B":
+                    window.alert("B型");
+                    break;
+
+                case "O":
+                    window.alert("O型");
+                    break;
+
+                case "AB":
+                    window.alert("AB型");
+                    break;
+
+
+                default:
+                    window.alert("未填正確血型");
+            }
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
