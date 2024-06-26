@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 進階練習:彈出輸入視窗，輸入起始值和結束值，算出奇數和、偶數和
+
+        let startc = Number(window.prompt("請輸入起始值"));
+        let endc = Number(window.prompt("請輸入結束值"));
+        // 如果輸入的不是數字，Number()會回傳NaN
+
+        let bigg = 0;
+        let smalll = 0;
+        let w1 = 0;
+        let w2 = 0;
+
+        if (isNaN(startc) == true || isNaN(endc) == true) {
+            // NaN無法用==去判斷
+            document.write('您輸入的不是數字');
+        } else {
+
+            if (startc > endc) {
+                // 如果結束值<起始值，則調換
+                bigg = startc;
+                smalll = endc;
+            } else if (startc < endc) {
+                bigg = endc;
+                smalll = startc;
+            }
+
+            for (let smalll = 1; smalll <= bigg; smalll++) {
+                if (smalll % 2 === 1) {
+                    w1 = w1 + smalll;    //奇數總和
+                }
+                if (smalll % 2 === 0) {
+                    w2 = w2 + smalll;    //偶數總和
+                }
+            }
+            //在迴圈外一起輸出
+            document.write('該區段奇數總和為' + w1);
+            document.write('<br>');
+            document.write('該區段偶數總和為' + w2);
+
+        }
+
+
+        // document.write(isNaN(startc));
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -8,23 +8,132 @@
 </head>
 
 <body>
+    <!-- 使用迴圈的時機 -->
+    <!-- 1.執行一樣的程式敘述區段 -->
+    <!-- 2.有規律性 -->
 
     <script>
-        for (let i = 2; i <= 9; i++) {
+        // 練習1
+        for (let i = 1; i <= 5; i = i + 2) {
+            document.write('Hello<br>');
+        }
+        //
+        document.write('<hr>');
+        // 練習2
+        for (let i = 10; i <= 15; i++) {
+            document.write(i + '<br>');
+        }
+
+        //
+        document.write('<hr>');
+        // 練習3
+        // 先++再顯示b
+        let b = 6;
+        for (let i = 1; i <= 5; i = i + 2) {
+
+            document.write(++b + '<br>');
+
+        }
+        //
+        document.write('<hr>');
+        // 練習4
+        //  寫偶數
+
+        for (let a = 1; a <= 10; a++) {
+
+            if (a % 2 === 0) {
+                //餘數=1
+                document.write(a);
+                if (a != 10) {
+                    document.write(",");
+                    // 如果不是最後一格就顯示"，"
+                }
+            }
+        }
+
+        //
+        document.write('<hr>');
+        // 練習5
+        // 在1-10中，取3的倍數和5的倍數，在迴圈後再顯示
+
+        let d = "";
+        for (let a = 1; a <= 10; a++) {
+            if (a % 3 === 0 || a % 5 === 0) {
+                d = d + a + ',';
+            }
+        }
+        document.write(d);
 
 
-            for (let j = 2; j <= 9; j++) {
-                
-                
-                document.write(i+"*"+j+"="+i*j);
+        // 
+        document.write('<hr>');
+        // 練習6
+        // 在1-10中，取3的倍數和5的倍數，在迴圈後再顯示分別的值、總和
+        let f = '';
+        let e = '';
+        let w3 = 0;
+        let w5 = 0;
+        for (let a = 1; a <= 10; a++) {
+            if (a % 3 === 0) {
+                f = f + a + '+'; //值
+                w3 = w3 + a;    //總和
+            }
+            if (a % 5 === 0) {
+                e = e + a + '+'; //值
+                w5 = w5 + a;    //總和
+            }
+        }
+        document.write(f);
+        document.write('=' + w3);
+        document.write('<br>');
+        document.write(e);
+        document.write('=' + w5);
+        document.write(`${w3}=${w3 * 2}`);
+
+
+        // 
+        document.write('<hr>');
+        // 練習
+
+        for (let i = 1; i <= 5; i = i + 2) {
+
+            for (let j = 2; j <= 7; j = j + 3) {
+
+                document.write(i + "*" + j + "=" + i * j);
                 document.write('<br>');
 
             }
             document.write('<br>');
 
-            
         }
 
+
+
+        document.write('<hr>');
+        // 練習九九乘法表
+        for (let i = 1; i <= 9; i++) {
+
+            for (let j = 1; j <= 9; j++) {
+
+                // 小於10則在前面補0
+                // if (i * j < 10) {
+                //     document.write(i + "*" + j + "=0" + i * j+" ");
+                // } else {
+                //     document.write(i + "*" + j + "=" + i * j+" ");
+                // }
+
+                document.write(i + "*" + j);
+                if (i * j < 10) {
+                    // 小於10則在前面補0
+                    document.write("=0");
+                } else {
+                    document.write("=");
+                }
+
+                document.write(i * j + " ");
+            }
+            document.write('<br>');
+        }
     </script>
 
 </body>
