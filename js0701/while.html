@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let s1 = 0;
+        let i = 1;
+        while (i <= 10) {
+            s1 = s1 + i;
+            i++;//如果不加這行，因為i=1所以會一直執行迴圈
+        }
+
+        //不管怎樣先執行1次，再判斷要不要再執行一次
+        let s2 = 0;
+        let j = 1;
+
+        do {
+            s2 = s2 + j;
+            j++;
+        }while (j <= 10)
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

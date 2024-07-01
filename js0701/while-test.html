@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 題目:請顯示1-100中，5的倍數並加總，當合計大於50就結束迴圈
+        // 用for、while、do  while
+
+        let s = 0;
+        for (let i = 1; i <= 100; i++) {
+
+            if (i % 5 == 0 && s <= 50) {
+                s = s + i;
+                document.write(`${i},總和${s}<br>`);
+            }
+        }
+
+        document.write(`-----<br>`);
+
+        s = 0;
+        let i = 1;
+        while (i <= 100) {
+
+            if (i % 5 == 0) {
+                s = s + i;
+                document.write(`${i},總和${s}<br>`);
+                if (s > 50) {
+                    break;
+                }
+            }
+            i++;
+
+        }
+
+
+        document.write(`-----<br>`);
+
+        // //不管怎樣先執行1次，再判斷要不要再執行一次
+        let s2 = 0;
+        let j = 1;
+
+        do {
+            if (j % 5 == 0) {
+                s2 = s2 + j;
+                document.write(`${j},總和${s2}<br>`);
+
+                if (s2 > 50) {
+                    break;
+                }
+            }
+            j++;
+        } while (j <= 100)
+
+
+
+    </script>
+
+
+</body>
+
+</html>
