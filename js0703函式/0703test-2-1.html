@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 題目:請輸入成績N次，直到輸入-1或取消就結束
+        /*
+        第1次分數:90
+        第2次分數:50
+        第3次分數:60
+        第4次分數:取消(如果輸入-1)
+        -----------------
+        及格人數:2人
+        不及格人數:1人
+        總分:200分
+        總平均:66.67分
+        (皆不含-1)
+        */
+
+        let pass = 0;
+        let unpass = 0;
+        let sum = 0;//用來紀錄總和
+        let end = true;//迴圈運算的標準
+        let i = 1;// 計次
+
+
+        for (i = 1; end = true; i++) {
+            let inputScore = window.prompt("請輸入數字");
+
+            // 判斷是否可以運算
+            if (inputScore == null || inputScore < 0 || inputScore > 100) {
+                inputScore = "非有效數字";
+                end = false;
+
+                // 最後再輸出return和其他結果
+                document.write(countt(i, inputScore));
+                document.write(`<br>(因最後輸入的值非數字，故未其納入以下運算)`);
+                document.write(`<br>--------------`);
+                document.write(`<br>及格人數:${pass}<br>不及格人數:${unpass}<br>`)
+                
+                document.write(`<br>總分:${sum}分`);
+                document.write(`<br>總平均:${(sum / (i - 1)).toFixed(2)}分`);
+                // 輸出運算結果，平均時i扣掉取消的那一次並四捨五入
+
+                break;
+
+            } else if (isNaN(inputScore)) {
+                //    如果非數字，回到迴圈一開始重新輸入
+                i--;
+                continue;
+            } else {
+                // 是數字就運算
+                // 如果不轉成數字就會變成字串+字串(像是6+3=63)
+                inputScore = Number(inputScore.trim());
+                // 紀錄計次和分數
+                document.write(countt(i, inputScore));
+                //用來紀錄總和
+                sum = sum + inputScore;
+                if (inputScore >= 60) {
+                    //計算及格人數
+                    pass++;
+                } else {
+                    //計算不及格人數
+                    unpass++;
+                }
+            }
+
+        }
+
+
+
+        function countt(count, inputS) {
+            // 輸出計次和分數
+            return `第${count}次:${inputS}<br>`;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

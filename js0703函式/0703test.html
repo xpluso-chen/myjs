@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 題目:設計一個函式能夠四則運算
+        // 須排除以下狀況:
+        // 1.取消
+        // 2.非數字
+        // 3.多於空白
+
+
+        // 使用輸入視窗產生任意a,b,c值
+        let inputa = window.prompt("請輸入數字");
+        let inputb = window.prompt("請輸入數字");
+        let inputc = window.prompt("請輸入加減乘除符號");
+
+        if (inputa == null || inputb == null || inputc == null) {
+            document.write(`按了取消，無法運算`);
+        } else if (isNaN(inputa) || isNaN(inputb)) {
+            document.write(`非數字，無法運算`);
+        } else {
+            // 如果不轉成數字就會變成字串+字串(像是6+3=63)
+            inputa = Number(inputa.trim());
+            inputb = Number(inputb.trim());
+            calc(inputa, inputb, inputc);
+
+        }
+
+        function calc(a, b, c) {
+            // a,b是數字
+            // c是運算符號
+
+            if (c == "+") {
+                document.write(`${a}+${b}=${a + b}`);
+            } else if (c == "-") {
+                document.write(`${a}-${b}=${a - b}`);
+            } else if (c == "/") {
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else if (c == "*") {
+                document.write(`${a}*${b}=${a * b}`);
+            } else {
+                document.write(`運算符號不存在`);
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// 函式宣告狀況1:無參數，無回傳值
+
+// 宣告
+function sayHi(){
+    document.write('hi<br>');
+}
+// 呼叫
+sayHi();
+
+// --------------------------
+// 函式宣告狀況2:有參數，無回傳值
+// 參數不用let宣告，且僅能在函式中使用
+
+// 宣告
+function sayHi2(strName){
+    document.write("HI!"+strName+"<br>");
+}
+// 呼叫
+sayHi2("ABC");
+sayHi2("DDD");
+
+let imputName=window.prompt("輸入名稱");
+sayHi2(imputName);
+
+
+// --------------------------
+// 函式宣告狀況3:有參數，有回傳值
+
+function chackScore(intNumb){
+if(intNumb>=60){
+    return "及格";
+}else{
+    return "不及格";
+}
+}
+
+let score=Number(window.prompt("輸入數字"));
+document.write(chackScore(score));
+// 輸出return的內容
+
+
+
+// --------------------------
+// 函式宣告狀況1:無參數，無回傳值
+
+</script>
+    
+</body>
+</html>
