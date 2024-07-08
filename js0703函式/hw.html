@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>猜數字</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字</title>
 </head>
+
 <body>
     <script>
         // 猜數字：直到猜對才結束
@@ -20,14 +22,85 @@
         // console.log(Math.floor(Math.random()*100)); // 回傳 0 ~ 99
         // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
         // 產生亂數給變數bingoNum
-        let bingoNum = Math.floor(Math.random() * 100) + 1;
-        // console.log(bingoNum);
 
-        
+
+        let bingoNum = Math.floor(Math.random() * 100) + 1;
+
+        //  bingoNum = 60;
+
+        let min = 0;
+        let max = 100;
+        let end = true;
+
+
+        for (i = 1; end = true; i++) {
+            let guess = window.prompt("請輸入數字");
+
+
+            if (guess == null || guess < 0 || guess > 100) {
+                guess = "非有效數字";
+                i--;
+                continue;
+
+            } else if (isNaN(guess)) {
+                //    如果非數字，回到迴圈一開始重新輸入
+                i--;
+
+                continue;
+            } else if (guess == bingoNum) {
+                end = false;
+                console.log(bingoNum + "猜對了");
+                break;
+            } else {
+                // 是數字就運算
+
+                console.log(`第${i}次:${guess}`);
+                console.log(guesscount(Number(guess)));
+
+            }
+
+        }
+
+
+
+
+        function countt(count, input) {
+            // 輸出計次和分數
+            return `第${count}次:${input}<br>`;
+        }
+
+
+        function guesscount(input) {
+
+            if (Number(input) < bingoNum) {
+                console.log("太小了");
+                max = Math.max(min, max, Number(input));
+                min = input;
+            } else if (Number(input) > bingoNum) {
+                console.log("太大了");
+                max = input;
+                min = Math.min(min, max, Number(input));
+            }
+
+            return `提示:${min}~${max}`;
+
+        }
+
+
+
+
+
+        // let x = 10;
+        // let y = -20;
+        // let z = Math.min(x, y,guess);
+        // document.write(z + "<br>");
+
+
 
 
 
     </script>
 
 </body>
+
 </html>
