@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// 顯示陣列中所有的值
+let arr=[1,2,3,'999'];
+
+// for
+for(let i=0;i<arr.length;i++){
+    console.log(arr[i]);
+}
+
+//.map()
+let arrMapAllData=arr.map((n)=>{
+    return n;
+});
+
+// for of arr中的值都丟給n
+for(let n of arr){
+    console.log(n);
+}
+
+//forEach
+arr.forEach((n)=>{
+    console.log(n);
+})
+
+
+</script>
+</body>
+</html>

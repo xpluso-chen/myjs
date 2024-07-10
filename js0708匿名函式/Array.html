@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 一維陣列、二維陣列、多維陣列
+
+        let arr = [50, 90, 100, 30, 60];
+        document.write("陣列長度" + arr.length);
+        document.write("取出陣列內的值" + arr[2]);
+
+        // 用迴圈取出arr陣列所有值
+        // for(let i=0;i<arr.length;i++){
+        //     document.write("<br>"+"取出陣列內的值"+arr[i]);
+        // 
+        document.write("<br>" + "取出陣列內的值" + arr.sort());
+
+        /*我的寫法
+                // 找出最小值
+                let min = arr[0];//找一格來放
+                let temp = 0;
+                let max = arr[1];//找一格來放
+                let temp2=0;
+        
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        temp = arr[i];
+                        min=arr[i];
+                        arr[0]=temp;
+                        
+                    }else if(arr[i] > max){
+                        temp2 = arr[i];
+                        max=arr[i];
+                        arr[1]=temp2;
+                        
+                    }
+        
+                }
+                document.write("<br>"+"最小值"+arr[0]);
+                document.write("<br>"+"最大值"+arr[1]);
+        */
+
+        //tr寫法，max min不可設為0，因為是和arr[]內的值比較(隨便設哪格值都可以)，不是跟0比較
+        // arr[1]會浮動，但是max min是只有一開始設定是arr[1]，後面各自獨立
+        let max = arr[1];
+        let min = arr[1];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+
+            } else if (arr[i] < min) {
+                min = arr[i];
+            }
+
+        }
+        document.write("<br>" + "最小值" + min);
+        document.write("<br>" + "最大值" + max);
+
+
+    </script>
+
+
+
+</body>
+
+</html>

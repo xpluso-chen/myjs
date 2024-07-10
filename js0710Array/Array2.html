@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+// 陣列內容物可混搭不同屬性的
+
+// 建立陣列方法1
+let arr1=[100,65,30,44,56];
+console.log(`arr1:${arr1}`);
+
+// 建立陣列方法2
+let arr2=[];
+
+// 建立陣列方法3
+let arr3=new Array();
+
+// 建立陣列方法4
+let arr4=new Array(1,'A',{x:50},null,true);
+
+
+
+// 錯誤用法
+arr1=[100,65,30,44,56];
+arr1.sort();
+//僅比對第一個字元，而非整組數字[100,30,44,56,65]
+
+// 陣列用法:遞增
+arr1.sort((a,b)=>{
+    return a -b ;//a~b(遞增排序)
+})
+console.log(arr1);
+
+// 陣列用法:遞減
+arr1.sort((a,b)=>{
+    return b -a ;//b~a(遞減排序)
+})
+console.log(arr1);
+
+// 順序反轉(前提是已排序過)
+arr1.reverse();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+let arr=[1,2,"457"];
+
+// 題目:將陣列中的型別輸出
+document.write(arr+"<br>");
+document.write(arr.map((n)=>{return typeof(n);}));
+
+for (let n of arr) {
+    document.write("<br>"+typeof(n));
+}
+document.write("<br>");
+// 題目:只輸出陣列中字串
+arr.forEach((n) => {
+    if(typeof(n)==="string"){
+        document.write(n)
+    }
+    
+});
+
+
+
+
+
+// 題目:輸出陣列中超過100以上的值
+let arr1 = [1, 3, 7, 100, 234];
+
+arr1.forEach((n) => {
+    if(n>=100){
+        document.write(n);
+    }
+    
+})
+
+for (let n of arr1) {
+    if(n>=100){
+        document.write(n);
+    }
+    
+}
+
+</script>
+</body>
+</html>
