@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        let r = Math.random();
+        let r2 = Math.floor(r * 5) + 1;//亂數設為1~5
+
+        // 找出陣列中是否有某數值>>並傳位置
+        let arr = [1, 100, 3, 5, 60];
+        let result = arr.indexOf(r2);
+
+        document.write("陣列" + arr + "<br>");
+        document.write("亂數:" + r2 + "<br>");
+        document.write("在陣列中位置:" + result);
+        // 若顯示-1則表示不在陣列中
+
+
+        // ----------
+        let arr2 = ["A", "B", "3", "5", 60];
+        result = arr2.indexOf("B");
+        document.write("<br>" + "陣列" + arr2 + "<br>");
+        document.write("B在陣列中位置:" + result);
+
+        // 找出陣列中是否有某數值>>並傳boolean
+        arr2 = ["A", "B", "3", "5", 60];
+        result = arr2.includes("B");
+        document.write("<br>" + "陣列" + arr2 + "<br>");
+        document.write("B在陣列中位置:" + result);
+
+        // 新增某值進陣列中
+        arr2 = ["A", "B", "3", "5", 60];
+        arr2.push("new");
+        document.write("<br>" + arr2 + "<br>");
+        arr2.pop();
+        document.write("<br>" + arr2 + "<br>");
+
+        // ----------------
+        let a = 50;
+        let b = 0;
+        arr2 = ["A", "B", "3", "5", 60];
+        document.write("<br>" + arr2 + "<br>");
+
+        if (arr2.includes(a) == true) {
+
+        } else {
+            arr2.push(a);
+        }
+        // arr2.pop();
+        document.write("<br>" + arr2 + "<br>");
+
+
+
+    </script>
+</body>
+
+</html>

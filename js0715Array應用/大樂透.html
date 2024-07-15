@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 大樂透，遞增排序
+        // 大樂透玩法:從1～49選出6個號碼，進行投注。
+        // 開獎時，將隨機開出6個號碼(加1個特別號)
+        // 如果有三個以上和開獎號碼一樣則中獎
+
+
+        let open = [];
+        let newInt = 0;
+        let arr = [1, 2, 3, 4, 5, 6];
+        let check = [];
+        let count = 0;
+        let b = 0;
+
+        // 亂數開獎號碼，不可重複
+        for (j = 0; j < 6;) {
+            newInt = Math.floor(Math.random() * 49) + 1;
+
+            if (open.includes(newInt) == true) {
+                // 重複
+                
+            } else {
+                // 沒重複
+                open.push(newInt);
+                j++
+            }
+
+            
+        }
+        open.push(Math.floor(Math.random() * 49) + 1);//特別號
+
+
+        // 確認是否中獎
+        for (i = 0; i < 6; i++) {
+            let x = arr.includes(open[i]);
+            check.push(x);
+        }
+
+        check.forEach((n) => {
+            if (n == true) {
+                return count++;
+            }
+        })
+
+
+
+        open.sort((a, b) => { return a - b; })
+        document.write("開獎號碼: " + open + "<br>");
+        document.write("填寫號碼: " + arr + "<br>");
+        // document.write("確認是否中獎 :" + check + "<br>");
+        // document.write("符合數 :" + count + "<br>");
+
+        if (count >= 3) {
+            document.write("確認是否中獎 :中獎");
+        } else {
+            document.write("確認是否中獎 :未中獎");
+        }
+
+    </script>
+</body>
+
+</html>
