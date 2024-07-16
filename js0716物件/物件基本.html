@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 一般方式
+        let userName = "阿金";
+        let userAge = 7;
+        function sayHi() {
+            console.log(`hi，我是${userName},今年${userAge}歲`);
+        }
+
+        // 建立物件
+        // 方法一:實體化
+        let user = {
+            name: "阿金",
+            age: 7,
+            sayHi: function () {
+                console.log(`hi，我是${this.name},今年${this.age}歲`);
+            }
+        };
+
+
+        // 呼叫
+
+        console.log(user.name);
+        console.log(user[`name`]);
+        console.log(user.age);
+        user.sayHi();
+
+        // 變更
+        user.age = 15;
+
+        // 刪除
+        delete user.age;
+
+        // 新增
+        user.size=function () {
+                console.log(`新增`);
+            }
+            user.size();
+
+
+        // 方法二:建構子
+        let mobile = new Object();
+        // let mobile={}; 
+        mobile.brand = "iPhone";
+        mobile.color = "black";
+        mobile.size = "14吋";
+
+        mobile.showMsg=function(){
+            console.log(`品牌:${this.brand}，顏色:${this.color}，尺寸:${this.size}`);
+        }
+
+
+        mobile.showMsg();
+    </script>
+</body>
+
+</html>

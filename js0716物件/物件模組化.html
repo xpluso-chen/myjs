@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// 物件模組化>>為了可以活用
+// 字首大寫
+function Mobile(brand, color,size){
+this.brand=brand;
+this.color=color;
+this.size=size;
+this.showMsg=function(){
+            console.log(`品牌:${this.brand}，顏色:${this.color}，尺寸:${this.size}`);
+        }
+}
+
+let m1=new Mobile("OPPO","red","15");
+m1.showMsg();
+
+
+</script>
+</body>
+</html>
