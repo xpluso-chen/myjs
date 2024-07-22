@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// 一般宣告
+let obj=new Object();
+obj.sid="s001";
+obj.sName="1號同學";
+obj.score=99;
+
+console.log(obj);
+
+// 建立物件模板成員
+function Sobj(sid,sName,score){
+this.sid=sid;
+this.sName=sName;
+this.score=score;
+// this代替Obj，好處是如果你改物件名就不用一個一個改
+concole.log(this.score);
+}
+
+let s1=new Sdata("s001","1號同學",101);
+
+
+
+// 練習
+function Sdata(no,name,score1,score2,score3,...other){
+    this.no=no;
+    this.name=name;
+    this.score1=score1;
+    this.score2=score2;
+    this.score3=score3;
+    this.show=function(){
+        console.log(name+"總分"+(score1+score2+score3));
+        console.log(`身高:${other[0]},體重:${other[1]}`);
+    }
+    
+
+}
+let s01=new Sdata("s01","小明",50,60,70,"無身高",50);
+let s02=new Sdata("s02","小u",100,30,10);
+let s03=new Sdata("s03","小a",88,99,44);
+s01.show();
+s02.show();
+
+// 一般方法
+
+console.log("score1總分="+(s01.score1+s02.score1+s03.score1));
+console.log("score2總分="+(s01.score2+s02.score2+s03.score2));
+console.log("score3總分="+(s01.score3+s02.score3+s03.score3));
+
+
+
+//陣列物件方法
+console.log("-------陣列物件----------");
+
+let arrObj=[s01,s02,s03];
+console.log(arrObj);
+let totScore1=0,totScore2=0,totScore3=0;
+for(let i=0;i< arrObj.length;i++){
+    totScore1+=arrObj[i].score1;
+    totScore2+=arrObj[i].score2;
+    totScore3+=arrObj[i].score3;
+}
+console.log("score1總分="+totScore1);
+console.log("score2總分="+totScore2);
+console.log("score3總分="+totScore3);
+
+</script>
+</body>
+</html>

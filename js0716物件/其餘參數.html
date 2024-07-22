@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+// 建立一個加法運算函式add()
+// 當呼叫函式時的參數個數和呼叫時不一致時=>使用其餘參數
+//...會成為陣列
+function add(...number){
+let tot=0;
+console.log(number);
+
+// 用迴圈取得參數資料
+// for(let i=0;i<number;i++){
+//     tot=tot+number;
+// }
+
+// 用for of取得參數資料
+for(let n of number){
+    tot=tot+n;
+}
+
+return tot;
+}
+
+console.log(add(1,2,3));
+
+
+
+
+
+</script>
+</body>
+</html>
