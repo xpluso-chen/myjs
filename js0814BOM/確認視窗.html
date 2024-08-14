@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="../js0618-1/js0618-1.js" id="myform">
+        <label for="userName">姓名</label>
+        <input type="text" id="userName">
+        <br>
+        <input type="submit" value="登入" id="btn">
+
+    </form>
+
+
+    <script>
+        // 取得HTML
+        let myform = document.getElementById('myform');
+        myform.addEventListener('submit', (e) => {
+            if (window.confirm('確定要送出表單資料嗎')) {
+                // 如果按確定
+                let userName = document.getElementById('userName');
+                window.localStorage.setItem('userName', userName.value);//寫入存放資料
+
+                alert('成功送出');
+            } else {
+                // 如果按取消
+                e.preventDefault();//取消submit預設的action轉跳
+                alert('已為您取消');
+
+            }
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

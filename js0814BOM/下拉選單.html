@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="">
+        <label for="chooseWeb">選擇網站</label>
+        <select name="chooseWeb" id="chooseWeb">
+            <!-- 下拉選單，給預設選項否則還沒選前會顯示第一個(生理男) -->
+            <option id="" value="https://www.ikea.com.tw/zh">IKEA</option>
+            <option id="" value="https://shop.muji.tw/?lang=zh-TW">MUJI</option>
+            <option id="" value="https://www.gu-global.com/tw/zh_TW/">GU</option>
+        </select>
+    </form>
+
+
+
+    <script>
+        let chooseWeb = document.getElementById('chooseWeb');
+        chooseWeb.addEventListener('change', () => {
+            window.location.href = chooseWeb.value;
+        });  
+    </script>
+</body>
+
+</html>
