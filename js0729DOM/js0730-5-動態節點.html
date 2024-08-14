@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ui id="color">
+        <li>black</li>
+    </ui>
+
+    <script>
+        // 1.宣告標籤節點
+        let 標籤 = document.createElement('li');
+        // 2.宣告文字節點
+        let 文字 = document.createTextNode('red');
+        // 3.將文字加進標籤(合在一起)
+        標籤.appendChild(文字);
+        // 4.取得指定位置
+        let 指定位置 = document.querySelector('#color');
+        // 5.將3新增到指定位置
+        指定位置.appendChild(標籤);
+    </script>
+</body>
+
+</html>

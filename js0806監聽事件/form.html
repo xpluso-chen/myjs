@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./跑馬燈.html">
+        <!-- 送出後，轉跳到別頁 -->
+
+        <label for="pen">表單:</label>
+        <input type="text" name="" id="pen">
+        <!-- label for=""和input id=""相同時，點選時會顯示focus -->
+        <input type="submit" value="送出">
+    </form>
+
+   
+    
+<div onclick="document.body.innerHTML='我變了'">按一下我變更內容</div>
+
+<div onclick='change()'>按一下我變更下面內容</div>
+<p class="theP" id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit harum perspiciatis similique laborum deleniti itaque necessitatibus reprehenderit natus, facilis, labore ab voluptatibus sint non porro voluptatem magnam asperiores? Soluta, eius.</p>
+
+<script>
+
+    function change(){
+        // document.querySelector('p').innerHTML='變!'
+    // document.getElementById('p1').innerHTML='我是段落';
+    document.getElementsByClassName('theP').innerHTML='我是段落';
+    }
+</script>
+
+
+
+
+</body>
+
+</html>

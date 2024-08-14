@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 事件運作方式 -->
+    <!-- 方法1:程式敘述寫在標籤內的事件中 -->
+    <button onclick="alert('HI')">按我</button>
+
+    <!-- 方法2:呼叫函式 -->
+    <button onclick="sayHI()">按我2</button>
+    <script>
+        function sayHI() {
+            alert('HI2');
+        }
+    </script>
+
+    <!-- 方法3:監聽函式事件 -->
+    <button id="btn1">按我3</button>
+    <script>
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+            alert('HI3');
+
+        });
+        //  btn1.onclick = ()=>{alert('HI3');}
+
+    </script>
+
+    <!-- 方法4:呼叫事件 -->
+    <button id="btn2">按我4</button>
+    <script>
+        // querySelector事件寫法
+        let btn2 = document.querySelector('#btn2');
+        btn2.onclick = sayHI2;
+
+
+        function sayHI2() {
+            alert('HI4');
+        }
+    </script>
+
+</body>
+
+</html>

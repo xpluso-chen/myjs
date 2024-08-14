@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">按我3</button>
+<script>
+let btn1=document.getElementById('btn1');
+btn1.addEventListener('click',(e)=>{
+    alert('HI3');
+
+    // 取得事件名稱
+   console(e.type);
+   // 取得按鈕文字
+   console(e.target.innerHTML);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span onclick="">關於我</span>
+        <span onclick="changeToExps()">學經歷</span>
+        <span onclick="changeToContent()">聯絡我</span>
+    </div>
+    <hr>
+    <div id="about">大家好，我是XXXX</div>
+    <div id="exps">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, velit
+        ipsam! Aliquam amet, quae quas distinctio maxime, aut labore sunt temporibus magnam fugit deleniti tenetur at
+        facilis excepturi incidunt animi?</div>
+
+    <div id="content">
+        email:ooo@gmail.com
+    </div>
+    <script>
+
+        let aboutDiv = '';
+        let expstDiv = '';
+        let contDiv = '';
+
+        function getDiv() {
+            // 先取得操作的標籤div
+            aboutDiv = document.querySelector('#about');
+            expstDiv = document.querySelector('#exps');
+            contDiv = document.querySelector('#content');
+            // 預設全關
+            aboutDiv.style.display = 'none';
+            expstDiv.style.display = 'none';
+            contDiv.style.display = 'none';
+        }
+
+
+        // 學經歷
+        function changeToExps() {
+            getDiv();
+            expstDiv.style.display = 'block';
+        }
+
+        function changeToContent() {
+            getDiv();
+            contDiv.style.display = 'block';
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    p{
+        font-size: 32px;
+    }
+</style>
+</head>
+<body>
+<!-- 使用style屬性動態改文字色彩 -->
+<p id="msg" onmousemove="changeColor();" onmouseout="restore();">HELLO</p>
+
+<script>
+    // 滑鼠碰到變色
+function changeColor(){
+// 取得變色的目標
+let msg = document.getElementById('msg');
+// 前景色
+msg.style.color ='red';
+// 背景色
+msg.style.backgroundColor = '#000';
+}
+
+// 滑鼠離開變回
+function restore(){
+    // 取得變色的目標
+let msg = document.getElementById('msg');
+// 前景色
+msg.style.color ='';
+// 背景色
+msg.style.backgroundColor = '';
+}
+
+
+</script>
+
+
+</body>
+</html>
