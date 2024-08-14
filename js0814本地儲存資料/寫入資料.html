@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="./讀取資料.html">
+        <label for="uid">帳號</label>
+        <input type="text" value="" id="uid">
+        <br>
+        <label for="upw">密碼</label>
+        <input type="text" value="" id="upw">
+        <br>
+        <input type="submit" value="登入" id="btn">
+        <input type="button" value="跳轉頁面" id="btn2">
+    </form>
+
+
+
+
+    <script>
+
+        // 本地存放資料，用於跨頁面用
+        // 寫入
+        // window.localStorage.setItem('key1', 'value1');
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+
+            let uid = document.getElementById('uid');// 抓html
+            window.localStorage.setItem('uid', uid.value);//寫入存放資料
+
+            let upw = document.getElementById('upw');// 抓html
+            window.localStorage.setItem('upw', upw.value);//寫入存放資料
+
+        })
+
+
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', () => {
+            // 跳轉
+            window.location.href = "./讀取資料.html";
+        })
+
+
+
+    </script>
+</body>
+
+</html>

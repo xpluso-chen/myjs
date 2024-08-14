@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+<div>
+    <ul>
+        <li id="login_id"></li>
+        <li id="login_pw"></li>
+    </ul>
+</div>
+
+<script>
+//  讀取
+let uid= window.localStorage.getItem('uid');
+let upw= window.localStorage.getItem('upw');
+
+// 抓html
+let login_id = document.getElementById('login_id');
+let login_pw = document.getElementById('login_pw');
+    
+login_id.textContent = `帳號:${uid}`;
+login_pw.textContent = `密碼:${upw}`;
+</script>
+
+</body>
+</html>
