@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../javascripts/vendor.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Document</title>
+<style>
+   
+    #body{
+        background-color: #F5F5F5;
+
+    }
+    #newsArea{
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10%;
+        width: 70%;
+        padding: 5%;
+    }
+    .news img{
+    width: 100%;
+    }
+    .news h1{
+        font-weight: 700; 
+    }
+    .news h3{
+        font-size: 14px;
+        font-weight: 300;
+    }
+    .news p{
+        margin: 1rem 0;
+    }
+    
+</style>
+
+</head>
+
+<body>
+
+
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+    <!--JSX -->
+    <script type="text/babel">
+        function App() {
+            return <>
+            <div id="body">
+                <div id="newsArea" >
+                    <div className="news" >
+                    <h1>秋田縣夏日避暑勝地！探索秋田縣清涼避暑景點和夏季活動，體驗鳥海山、法體瀑布、稻田藝術等多項夏日樂趣。</h1>
+                    
+                        <h3>Japan Walker</h3>
+                        <h3>更新於 07月22日00:24 • 發布於 07月21日23:23 • 編輯 李維唐</h3>
+                        
+                        <p>炎炎夏日最適合到清涼消暑的景點出遊，秋田縣的鳥海山、元瀧伏流水、中島台獅子鼻濕原、法體瀑布等景點，不僅風光明媚，景色宜人，更是夏日避暑的好地方。夏日的秋田縣還有多項熱鬧的活動，如大曲煙火大會、田澤湖馬拉松等以及季節限定的稻田藝術。今年夏天，秋田縣歡迎大家一同出遊同樂。</p>
+                    <figure className='IMG' >
+                        <img src="https://today-obs.line-scdn.net/0hcxylPSt8PFdEFSyvTvlDAHxDMCZ3cyZeZndxNmlGYGdtOX0JKCdvNDQVMHtgJnsIZHR6ZTQVZGZhcS5VcQ/w644" alt="" />
+                    </figure>
+                    
+                    <h3>探索秋田縣清涼避暑景點和夏季活動，體驗鳥海山、法體瀑布、稻田藝術等多項夏日樂趣</h3>
+                    <p>鳥海山橫跨於秋田縣與山形縣之間，是日本東北第二高峰，山姿優雅，有出羽富士的美稱。由於鳥海山是獨立山峰，從山頂眺望的景色非常遼闊美麗。夏季時，這裡可以看到許多罕見的高山植物，吸引了許多遊客前來探訪。對於喜歡登山健行的朋友來說，鳥海山絕對是不容錯過的避暑勝地，讓人流連忘返。</p>
+                </div>
+                </div>
+            </div>
+            </>
+        }
+
+
+
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</body>
+
+</html>
