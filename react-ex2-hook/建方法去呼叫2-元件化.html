@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        //1.解構
+        const { useState } = React;
+
+        //5.建元件，抓參數(因參數在APP()所以要呼叫)
+        function SearchBox({text,onSearchHandler}) {
+            return (
+                <>
+                    <label htmlFor="search">搜尋</label>
+                    <input type="text" id='search' className='' value={text} onChange={onSearchHandler} />
+
+                </>
+            )
+        }
+
+
+        function App() {
+            //2.定義狀況
+            const [text, setText] = useState('請輸入任何字');
+            //3.建一個更新資料的函式(用變數裝)
+            const onSearchHandler = (e) => {
+                setText(e.target.value);
+
+            }
+
+            //4.輸出樣式
+            return (
+                <div>
+
+                    {/*呼叫元件，並回傳參數*/}
+                    <SearchBox text={text} onSearchHandler={onSearchHandler}/>
+                    <SearchBox text={text} onSearchHandler={onSearchHandler}/>
+                </div>
+            )
+        }
+
+        // 簡寫法
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+    </script>
+</body>
+
+</html>

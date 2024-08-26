@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //解構
+        const { useState } = React;
+
+        function APP() {
+            const [arr, setArr] = useState([1, 2, 3, 4]);
+            return (
+                <>
+                    <ul>
+                        {
+                            arr.map((item, index) => {
+                                return (
+                                    <li key={index}>{item}</li>
+                                )
+                            })
+                        }
+                    </ul>
+
+                    <button onClick={() => {
+                        setArr([...arr, arr.length + 1]);
+                        //將新增加的東西加入陣列中
+                        // 相當於JS的push()
+                    }}>新增</button>
+
+
+                    <button onClick={() => {
+                        // 相當於JS的pop()
+                        setArr(arr.filter((item) => item !== arr.lenght));
+                    }}>刪除</button>
+
+                </>
+
+
+            )
+
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<APP />);
+
+    </script>
+</body>
+
+</html>
