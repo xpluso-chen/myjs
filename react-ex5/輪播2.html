@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 200px;
+            ;
+            /* 縮圖用 */
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        #nev {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 99;
+
+        }
+
+        #nev a {
+color: #FFF;
+font-size: 0;
+/* 如果不要顯示數字就寫0 */
+
+display: inline-block;
+margin-left: 20px;
+width: 20px;
+height: 20px;
+text-align: center;
+line-height: 20px;
+border-radius: 50%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    $('#cycle').after('<div id="nev"></div>').cycle({
+                        fx: 'turnDown',
+                        timeout: 500,  //輪播速度
+                        delay: -4000, //第一次輪播的開始時間
+                        pager: '#nev',
+                    });
+                })
+
+            }, []);
+
+            return <>
+                <div id="box">
+                    <div id='cycle'>
+                        <img src="./file.png" alt="" />
+                        <img src="./cat.png" alt="" />
+                        <img src="./cat_hakai.png" alt="" />
+                        <img src="./broken.png" alt="" />
+                    </div>
+                </div>
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 燈箱效果 -->
+    <script src="./jQuery/js/jquery.cycle.all.js"></script>
+</body>
+
+</html>

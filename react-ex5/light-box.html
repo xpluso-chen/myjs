@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 燈箱效果 -->
+    <link rel="stylesheet" href="./jQuery/lightbox/css/lightbox.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 10%;
+            /* 縮圖用 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        function App() {
+            return <>
+                {/*單張顯示*/}
+                <a href="./file.png" data-lightbox="image-1" data-title="圖片說明"><img src="./file.png" alt="" /></a>
+                {/*群組顯示*/}
+                <a href="./cat.png" data-lightbox="group" data-title="圖片說明"><img src="./cat.png" alt="" /></a>
+                <a href="./cat_hakai.png" data-lightbox="group" data-title="圖片說明"><img src="./cat_hakai.png" alt="" /></a>
+                <a href="./broken.png" data-lightbox="group" data-title="圖片說明"><img src="./broken.png" alt="" /></a>
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 燈箱效果 -->
+    <script src="./jQuery/lightbox/js/lightbox.js"></script>
+</body>
+
+</html>
