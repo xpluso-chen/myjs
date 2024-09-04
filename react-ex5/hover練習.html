@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .cssAnim1 {
+            width: 200px;
+            background-color: burlywood;
+            padding: 50px;
+            text-align: center;
+            transition: all .5s linear;
+        }
+
+        .bgColor {
+            color: aliceblue;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    $('#box').hover(function () {
+                        //hover前
+                        $(this).addClass('bgColor');
+                    }, function () {
+                        //hover後
+                        $(this).removeClass('bgColor');
+                    });
+                })
+
+            }, []);
+
+            return <>
+
+                <div >
+                    <a href="#" id='box' className="cssAnim1">按鈕</a>
+                </div>
+
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+
+</body>
+
+</html>

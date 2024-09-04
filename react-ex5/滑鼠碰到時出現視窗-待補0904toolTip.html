@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        a {
+            color: brown;
+            text-decoration: none;
+        }
+        #ttpPanel{
+            padding: 15px;
+            width: 200px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    //傳回找到的值=> has()
+                    //速度 =>可用秒數或參數(slow/normal/fast)
+
+                    //檢查a中有沒有Class:ttpShow
+                    $('a:has(.ttpShow)').mouseover(function (e) {
+
+                        $().css({}).fadeIn('fast');
+
+                    }).mousemove(function (e) {
+                        $().css({}).fadeIn('fast');
+
+                    }).mouseout(function (e) {
+                        $().css({}).fadeOut('fast');
+
+                    });
+
+                })
+
+            }, []);
+
+            return <>
+
+                <div id='wrapper'>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis<a href="#">內容內容內容<span className="ttpShow">註解</span></a> quibusdam omnis aperiam, possimus reprehenderit nulla iusto dignissimos saepe. Accusantium<a href="#">內容內容內容<span className="ttpShow">註解</span></a> maiores ipsa obcaecati, voluptas iure non. Inventore quae voluptatem numquam ab!
+                    <a href="#">內容內容內容<span className="ttpShow">註解</span></a>
+                </div>
+
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+
+</body>
+
+</html>
