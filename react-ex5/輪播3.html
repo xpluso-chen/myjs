@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            /* 縮圖用 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    $('#carousel').jCarouselLite({
+                        auto:1200,//多久會下一張
+                        scroll:1,//一次輪播幾張
+                        visible:1,//畫面顯示張數
+                        speed:2000//轉速
+
+
+                    });
+                })
+
+            }, []);
+
+            return <>
+
+                <div id='carousel'>
+
+                    <ul>
+                        <li><img src="./file.png" alt="" /></li>
+                        <li><img src="./cat.png" alt="" /></li>
+                        <li><img src="./cat_hakai.png" alt="" /></li>
+                        <li><img src="./broken.png" alt="" /></li>
+                    </ul>
+
+                </div>
+
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 旋轉木馬效果 -->
+    <script src="./jQuery/js/jquery.jcarousellite.min.js"></script>
+</body>
+
+</html>

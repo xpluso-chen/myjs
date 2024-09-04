@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            /* 縮圖用 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    $('#contenter').imagesLoaded(function () {
+                        $('#contenter').masonry({
+                            // 水平至中，搭配最外框要margin:auto
+                            isFitWidth:true
+                        });
+
+                    });
+                })
+
+            }, []);
+
+            return <>
+
+                <div id='contenter'>
+                    <div class="box"><img src="./file.png" alt="" /></div>
+                    <div class="box"><img src="./cat.png" alt="" /></div>
+                    <div class="box"><img src="./cat_hakai.png" alt="" /></div>
+                    <div class="box"><img src="./broken.png" alt="" /></div>
+                    <div class="box"><img src="./patten.png" alt="" /></div>
+                    <div class="box"><img src="./megane.png" alt="" /></div>
+                </div>
+
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 載入圖片主程式 -->
+    <script src="./jQuery/js/imagesloaded.pkgd.min.js"></script>
+
+    <!-- 瀑布流效果 -->
+    <script src="./jQuery/js/masonry.pkgd.min.js"></script>
+</body>
+
+</html>

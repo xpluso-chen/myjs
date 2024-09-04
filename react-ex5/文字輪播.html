@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./jQuery/css/textslider.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 跟元素的地方 -->
+    <div id="root"></div>
+
+    <!--JSX -->
+    <script type="text/babel">
+
+        const { useEffect } = React;
+
+
+
+        function App() {
+            useEffect(() => {
+                // JQ套件
+                $(function () {
+                    $('.slideText').textslider({
+                        direction: 'scrollUp',
+                        scrollNum: 2,//一次捲動幾個
+                        scrollSpeed: 800,
+                        pause: 500
+                    });
+                });
+
+            }, []);
+
+            return <>
+                <div class="slideText">
+                    {/*這個套件規定class名*/}
+                    <ul>
+                        <li>NEWS1</li>
+                        <li>NEWS2</li>
+                        <li>NEWS3</li>
+                        <li>NEWS4</li>
+                        <li>NEWS5</li>
+                        <li>NEWS6</li>
+                        <li>NEWS7</li>
+                        <li>NEWS8</li>
+                        <li>NEWS9</li>
+                    </ul>
+                </div>
+
+
+            </>
+
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+
+
+    <!-- JQ主程式 -->
+    <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
+
+    <!-- 效果 -->
+    <script src="./jQuery/js/jquery.textslider.js"></script>
+</body>
+
+</html>
